@@ -1,0 +1,385 @@
+:root {
+  --text-01: #45413E;
+  --light-01: #F9F9F9;
+  --light-02: #FFFFFF;
+  --brand-01: #DB7F67;
+  --brand-02: #F4CFC6;
+  --card-hover: 0px 4px 24px rgba(0, 0, 0, 0.15);
+  --card-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  --hover-timing: all 0.2s ease;
+  --nav-card-size: 240px;
+
+  -webkit-font-smoothing: antialiased;
+  -font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: var(--hover-timing);
+  background: var(--light-01);
+  width: 100vw;
+  overflow-x: hidden;
+
+}
+
+section{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: flex-start;
+  margin-left: 2%;
+}
+
+#logo {
+  width: 10%;
+  height: 60px;
+}
+
+header {
+  /*    width: 100%;*/
+  height: auto;
+  position: sticky;
+  top: 0;
+  /*    border: 1px solid red;*/
+  z-index: 100;
+}
+
+.horizontal_navbar {
+  color: var(--text-01);
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+}
+
+.horizontal_navbar>ul {
+  width: 90%;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  list-style-type: none;
+  justify-content: space-between;
+  background-color: transparent;
+  margin-top: 0px;
+  margin-right: 5%;
+  margin-left: 0%;
+  padding-left: 0%;
+}
+
+.horizontal_navbar>li {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  text-decoration: none;
+  margin-right: 5%;
+  list-style-type: none;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo,
+#logout,
+#user-name {
+  display: flex;
+  flex-direction: column;
+  /*background-color: red;*/
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 12px 24px;
+  border-radius: 48px;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 8px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cama-button {
+  margin-bottom: 2%;
+  margin-left: 3%;
+}
+
+/*THIS IS FOR THE SECONDARY MENU */
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  /*position: fixed;*/
+  width: 100vw;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #04AA6D;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+
+/* ============================================================================= Responsive Table CSS ========================================================================== */
+
+   .dataTable {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.dataTable thead,
+.dataTable tbody,
+.dataTable thead tr,
+.dataTable th {
+    display: block;
+}
+
+.dataTable thead {
+    float: left;
+}
+
+.dataTable tbody {
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+}
+
+.dataTable td,
+.dataTable th {
+    padding: .625em;
+    line-height: 1.5em;
+    border-bottom: 1px dashed #ccc;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.dataTable th {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.14);
+    border-bottom: 1px dashed #aaa;
+}
+
+.dataTable tbody tr {
+    display: table-cell;
+
+}
+
+tr {
+    cursor: pointer;
+}
+
+.dataTable tbody td {
+    display: block;
+}
+
+.dataTable tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+@media screen and (min-width: 50em) {
+
+    .dataTable {
+        display: table;
+    }
+
+    .dataTable thead {
+        display: table-header-group;
+        float: none;
+    }
+
+    .dataTable tbody {
+        display: table-row-group;
+    }
+
+    .dataTable thead tr,
+    .dataTable tbody tr {
+        display: table-row;
+    }
+
+    .dataTable th,
+    .dataTable tbody td {
+        display: table-cell;
+    }
+
+    .dataTable td,
+    .dataTable th {
+        width: auto;
+    }
+
+}
+
+
+/*
+table{
+  width: 60vw;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.last{
+
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+
+th, td {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ddd;
+  width: 5%;
+}
+
+th{
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+*/
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+
+   /*Graphs */
+   .graphs-container{
+    display: flex;
+    flex-direction: column !important;
+    width: auto;
+    height: 50vh;
+}
+
+.graph-container{
+  width: 90% !important;
+  
+}
+
+
+/* Graphs*/
+
+  #logo {
+    display: none;
+  }
+
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/********************************************************** D3 *************************************************************************/
+
+
+.graphs-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100vw;
+  height: fit-content;
+  margin-bottom: 5vh;
+}
+
+.cama-container:hover {
+  box-shadow: var(--card-hover);
+}
+
+.cama-container h2 {
+  /*margin-top: 0;*/
+  margin-left: 20px;
+}
+
+.cama-container p {
+  line-height: 1.5;
+  margin-bottom: 40px;
+  width: 50%;
+  text-align: center;
+}
+
+.cama-container{
+  background: var(--light-02);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /*padding: 80px 0;*/
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: var(--hover-timing);
+  cursor: pointer;
+  margin-bottom: 8vh;
+  width: 95vw;
+  
+}
+
+#my_dataviz{
+  width: 100vw;
+  height:500px;
+}
+
+.graph-container{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 33%;
+  height:fit-content;
+  
+}
+
+/*
+.graph{
+  width: 30% !important;
+  height: auto !important;
+}
+*/

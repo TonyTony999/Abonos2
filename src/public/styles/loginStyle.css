@@ -1,0 +1,345 @@
+
+  :root {
+    --text-01: #45413E;
+    --light-01: #F9F9F9;
+    --light-02: #FFFFFF;
+    --brand-01: #DB7F67;
+    --brand-02: #F4CFC6;
+    --card-hover: 0px 4px 24px rgba(0, 0, 0, 0.15);
+    --card-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    --hover-timing: all 0.2s ease;
+    --nav-card-size: 240px;
+
+    -webkit-font-smoothing: antialiased;
+    -font-smoothing: antialiased;
+    scroll-behavior: smooth;
+
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: var(--hover-timing);
+    background: var(--light-01);
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+  header {
+    width: 100%;
+    height: auto;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) ;
+    z-index: 100;
+}
+  
+  .login-container {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .login-card {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .login-card-header {
+    background-color: var(--brand-01);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .login-card-body {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--text-01);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #04AA6D;
+  }
+
+  /************************************************* nav ************************************************************/
+
+  nav {
+    width: 100%;
+    color: var(--text-01);
+    font-weight: 600;
+    height: 64px;
+    background: var(--light-01);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--pg-margin);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    z-index: 100;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-01);
+}
+
+nav ul.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+nav .navigation-menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--text-01);
+
+}
+
+nav .navigation-menu>li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*    justify-items: center;*/
+}
+
+nav .navigation-menu>li>a {
+    position: relative;
+    /*    border: 1px solid purple;*/
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+nav .navigation-menu>li:hover ul.subnav {
+    visibility: visible;
+    opacity: 1;
+    top: 64px;
+
+}
+
+
+nav .navigation-menu>li>ul.subnav {
+    /*    border: 1px solid green;*/
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 66px;
+    background: var(--light-01);
+    box-shadow: var(--card-hover);
+    border-radius: 12px;
+    opacity: 0;
+    transition: var(--hover-timing);
+}
+
+
+nav>#logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 8px;
+    line-height: 100%;
+}
+
+nav>#logo>span {
+    font-size: 32px;
+}
+
+nav>#utility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+  /************************************************* MEDIA QUERIES ************************************************************/
+
+
+  @media only screen and (max-width: 600px) {
+    :root {
+        --pg-margin: 16px;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    #navigation-menu {
+        display: none;
+    }
+
+    .icon-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 10%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        margin-right: 5%;
+    }
+
+    #icon-image {
+        width: 100%;
+        height:50% ;
+       /* max-height: auto;*/
+    }
+
+    .navigation-menu-responsive {
+
+        position: absolute !important;
+        display: flex !important;
+        top: 64px !important;
+        right: 2%;
+        flex-direction: column !important;
+        width: 100vw !important;
+        height: fit-content;
+        z-index: 100;
+        background: var(--light-01);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    }
+
+    .navigation-menu-responsive li {
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .navigation-menu-responsive li a {
+        color: var(--text-01);
+        text-decoration: none;
+        list-style: none;
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+
+    .navigation-menu-responsive .subnav {
+        display: none !important;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+}
+
+@media only screen and (min-width: 600px) {
+
+  .icon-container {
+      display: none;
+  }
+
+  :root {
+      --pg-margin: 24px;
+  }
+
+  section.hero h1 {
+      --hero-text: 40px;
+      width: 60%;
+  }
+
+  section.hero {
+      aspect-ratio: 3/2;
+      background-size: 50%;
+      background-position: 90% 70%;
+      padding-top: 64px;
+
+  }
+
+  nav {
+      position: relative;
+
+  }
+
+  nav ul.navigation-menu {
+      position: absolute;
+      background: var(--light-01);
+      left: 0;
+      z-index: -1;
+      width: 100%;
+  }
+
+  nav ul.navigation-menu li a {
+      font-size: 16px;
+      white-space: nowrap;
+  }
+
+  nav ul.navigation-menu .subnav {
+      display: none;
+  }
+
+  nav ul.navigation-menu>li:hover .subnav {
+      display: none;
+  }
+
+  footer {
+      flex-direction: column;
+      text-align: center;
+  }
+}
